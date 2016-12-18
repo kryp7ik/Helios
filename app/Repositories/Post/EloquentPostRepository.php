@@ -60,13 +60,14 @@ class EloquentPostRepository implements PostRepositoryContract
                 'user_id' => $post->user->id,
                 'content' => $post->content,
                 'comments' => [],
-                'created' => DateHelper::timeElapsed($post->created_at)
+                'created' => DateHelper::timeElapsed($post->updated_at)
             ];
             foreach ($post->comments as $comment) {
                 $postMutated['comments'][] = [
+                    'id' => $comment->id,
                     'content' => $comment->content,
                     'user' => $comment->user->name,
-                    'date' => date('m-d-y h:ia', strtotime($comment->created_at))
+                    'date' => date('m-d-y h:ia', strtotime($comment->updated_at))
                 ];
             }
             return $postMutated;

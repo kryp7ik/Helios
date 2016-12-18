@@ -26,15 +26,10 @@
                                     </a>
                                 @endif
                             </small>
-                            <small class="pull-right">
-                                <span><i class="fa fa-calendar"></i>
-                                    {{ DateHelper::timeElapsed($post->created_at) }}
-                                </span>
-                            </small>
                         </h3>
                         <p>{!! str_limit(strip_tags($post->content), 600) !!}</p>
                         <ul class="list-inline list-unstyled">
-                            <li><span><i class="fa fa-calendar"></i> {{ DateHelper::timeElapsed($post->created_at) }} </span></li>
+                            <li><span><i class="fa fa-calendar"></i> {{ DateHelper::timeElapsed($post->updated_at) }} </span></li>
                             <li>|</li>
                             <span>
                                 <button data-id="{{ $post->id }}" class="read-more">
@@ -73,7 +68,7 @@
                         </h3>
                         <p>{!! str_limit(strip_tags($post->content), 600) !!}</p>
                         <ul class="list-inline list-unstyled">
-                            <li><span><i class="fa fa-calendar"></i> {{ DateHelper::timeElapsed($post->created_at) }} </span></li>
+                            <li><span><i class="fa fa-calendar"></i> {{ DateHelper::timeElapsed($post->updated_at) }} </span></li>
                             <li>|</li>
                             <span>
                                 <button data-id="{{ $post->id }}" class="read-more">

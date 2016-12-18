@@ -10,7 +10,6 @@
     </div>
     @include('admin.partials.post-modal')
 @endsection
-
 @push('scripts')
 <script>
 
@@ -25,7 +24,7 @@
             $('#post-id').val(id);
             $('#comments').html('');
             $.each(post.comments, function(key, value) {
-                $('#comments').append('<div class="well"><p>' + value.content + '</p><h6>By: ' + value.user + ' - ' + value.date + '</h6></div>')
+                $('#comments').append('<div class="well"><p>' + value.content + '</p><h6>By: ' + value.user + ' - ' + value.date + '<a href="/admin/comment/' + value.id + '/edit"><i class="fa fa-pencil"></i></a></h6></div>')
             })
         });
         $('#post-modal').modal('show');

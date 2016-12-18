@@ -32,5 +32,10 @@ class AppServiceProvider extends ServiceProvider
             \App\Repositories\Post\PostRepositoryContract::class,
             \App\Repositories\Post\EloquentPostRepository::class
         );
+
+        $this->app->bind(
+            \App\Repositories\Comment\CommentRepositoryContract::class,
+            \App\Repositories\Comment\EloquentCommentRepository::class
+        );
     }
 }

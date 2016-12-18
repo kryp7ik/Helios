@@ -51,12 +51,30 @@
                     <div class="form-group">
                         <div class="col-lg-5 col-lg-offset-7">
                             <a href="/" class="btn btn-default btn-raised">Cancel</a>
-                            <a href="/admin/posts/{{ $post->id }}/delete" class="btn btn-raised btn-danger">Delete</a>
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="confirm-modal">
+                                Delete
+                            </button>
                             <button type="submit" class="btn btn-primary btn-raised">Submit</button>
                         </div>
                     </div>
                 </div>
             </form>
+        </div>
+    </div>
+
+    <div class="modal fade" id="confirm-modal" tabindex="-1" role="dialog" aria-labelledby="confirm-modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Confirm Delete</h3>
+                </div>
+                <div class="modal-body">
+                    <h6>Are you sure you want to delete this Post?</h6>
+                </div>
+                <div class="modal-footer">
+                    <a href="/admin/posts/{{ $post->id }}/delete" class="btn btn-raised btn-danger pull-right">Delete</a>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

@@ -37,6 +37,10 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 
     Route::post('posts/{id?}/edit', 'PostController@update');
     Route::get('posts/{id?}/delete', 'PostController@delete');
     Route::post('posts/{id?}/add-comment', 'PostController@addComment');
+
+    Route::get('comment/{id?}/edit', 'CommentController@edit');
+    Route::post('comment/{id?}/edit', 'CommentController@update');
+    Route::get('comment/{id?}/delete', 'CommentController@delete');
 });
 
 
